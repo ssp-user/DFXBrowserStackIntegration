@@ -1,0 +1,28 @@
+!chromedriver.exe
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# module config
+*.iml
+.idea/misc.xml
+.idea
+.idea/*
+
+#output files
+#test-output
+target
+.settings/
+.classpath
+.project
+
+#Itellij JDK setting
+.idea/misc.xml
+
+#screenshot file
+screenshot
+screenshot/*
+

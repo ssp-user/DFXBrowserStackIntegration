@@ -1,0 +1,492 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.Dealer-FX.automation</groupId>
+	<artifactId>cucumberTest</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path -->
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.mkolisnyk/cucumber-runner -->
+		<dependency>
+			<groupId>com.github.mkolisnyk</groupId>
+			<artifactId>cucumber-runner</artifactId>
+			<version>1.3.5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.30</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/net.sourceforge.cobertura/cobertura -->
+		<dependency>
+			<groupId>net.sourceforge.cobertura</groupId>
+			<artifactId>cobertura</artifactId>
+			<version>2.1.1</version>
+			<!--<scope>system</scope> -->
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-core -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-core</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-jvm -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-jvm</artifactId>
+			<version>1.2.5</version>
+			<type>pom</type>
+		</dependency>
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/info.cukes/cucumber-jvm-deps 
+			&ndash;&gt; -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-jvm-deps</artifactId>
+			<version>1.0.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>cucumber-reporting</artifactId>
+			<version>4.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>maven-cucumber-reporting</artifactId>
+			<version>4.3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/info.cukes/gherkin -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>gherkin</artifactId>
+			<version>2.12.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>2.0.2-beta</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-html -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-html</artifactId>
+			<version>0.2.6</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>1.8.16</version>
+		</dependency>
+		<!--<dependency> -->
+		<!--<groupId>com.sun</groupId> -->
+		<!--<artifactId>tools</artifactId> -->
+		<!--<version>1.6</version> -->
+		<!--<scope>system</scope> -->
+		<!--<systemPath>C:\Program Files\Java\jdk1.8.0_152\lib\tools.jar</systemPath> -->
+		<!--</dependency> -->
+		<dependency>
+			<groupId>ATUReport.testNG</groupId>
+			<artifactId>ATUReport</artifactId>
+			<scope>system</scope>
+			<version>5.1.1</version>
+			<systemPath>${pom.basedir}\libraries\3rd_Party_Libs\ATUReporter_Selenium_testNG_5.1.1.jar</systemPath>
+			<type>jar</type>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>ATUReport.testNG</groupId>
+			<artifactId>ATURecord</artifactId>
+			<scope>system</scope>
+			<version>2.1</version>
+			<systemPath>${pom.basedir}\libraries\3rd_Party_Libs\ATUTestRecorder_2.1.jar</systemPath>
+			<type>jar</type>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.15</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.12</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.6</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/fluent-hc -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>fluent-hc</artifactId>
+			<version>4.5.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>7.1.1.jre8-preview</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.8</source>
+					<target>1.8</target>
+					<compilerArgument>-Werror</compilerArgument>
+					<!--<additionalClasspathElements> -->
+					<!--<additionalClasspathElement>${project.basedir}/src/main/java/com/automation/db</additionalClasspathElement> -->
+					<!--</additionalClasspathElements> -->
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>5.0.0</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>DFX-Automation</projectName>
+							<!-- optional, per documentation set this to "true" to bypass generation 
+								of Cucumber Reports entirely, defaults to false if not specified -->
+							<skip>false</skip>
+							<!-- output directory for the generated report -->
+							<outputDirectory>${project.build.directory}/cucumber-jvm-reports</outputDirectory>
+							<!-- optional, defaults to outputDirectory if not specified -->
+							<inputDirectory>${project.basedir}</inputDirectory>
+							<jsonFiles>
+								<!-- supports wildcard or name pattern -->
+								<param>**/cucumber.json</param>
+							</jsonFiles>
+							<!-- optional, defaults to outputDirectory if not specified -->
+							<!-- <classificationDirectory>${project.build.directory}/classifications</classificationDirectory> 
+								<classificationFiles> supports wildcard or name pattern <param>sample.properties</param> 
+								<param>other.properties</param> </classificationFiles> -->
+							<!-- <parallelTesting>false</parallelTesting> -->
+							<!-- optional, set true to fail build on test failures -->
+							<checkBuildResult>true</checkBuildResult>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+		<testResources>
+			<testResource>
+				<directory>${project.basedir}/src/test/resources</directory>
+			</testResource>
+		</testResources>
+
+	</build>
+	<dependencyManagement>
+		<dependencies>
+			<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>23.0</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+	<profiles>
+		<profile>
+			<id>appointmentmanager</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M5</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>runner/appointmentmanager.xml</suiteXmlFile>
+							</suiteXmlFiles>
+							<testFailureIgnore>true</testFailureIgnore>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>am-pipeline</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M5</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>runner/am-pipeline.xml</suiteXmlFile>
+							</suiteXmlFiles>
+							<testFailureIgnore>true</testFailureIgnore>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>am-parallel</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M5</version>
+						<configuration>
+							<parallel>classes</parallel>
+							<forkMode>perthread</forkMode>
+							<threadCount>2</threadCount>
+							<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+							<includes>
+								<exclude>**/*AM04runnerTest.java</exclude>
+							</includes>
+							<testFailureIgnore>true</testFailureIgnore>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>advisorcheckin</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M5</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>runner/advisorcheckin.xml</suiteXmlFile>
+							</suiteXmlFiles>
+							<testFailureIgnore>true</testFailureIgnore>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>mobilecheckin</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M5</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>runner/mobilecheckin.xml</suiteXmlFile>
+							</suiteXmlFiles>
+							<testFailureIgnore>true</testFailureIgnore>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>wiadvisor</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M5</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>runner/wiadvisor.xml</suiteXmlFile>
+							</suiteXmlFiles>
+							<testFailureIgnore>true</testFailureIgnore>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>payments</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M5</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>runner/payments.xml</suiteXmlFile>
+							</suiteXmlFiles>
+							<testFailureIgnore>true</testFailureIgnore>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>homepage</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M5</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>runner/homepage.xml</suiteXmlFile>
+							</suiteXmlFiles>
+							<testFailureIgnore>true</testFailureIgnore>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>appointmentmanagerProd2</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M5</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>runner/appointmentmanagerProd2.xml</suiteXmlFile>
+							</suiteXmlFiles>
+							<testFailureIgnore>true</testFailureIgnore>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>customerconnect</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M5</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>runner/customerconnect.xml</suiteXmlFile>
+							</suiteXmlFiles>
+							<testFailureIgnore>true</testFailureIgnore>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>communicationdashboard</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M5</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>runner/communicationdashboard.xml</suiteXmlFile>
+							</suiteXmlFiles>
+							<testFailureIgnore>true</testFailureIgnore>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>sanity-parallel</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M5</version>
+						<configuration>
+							<parallel>classes</parallel>
+							<forkMode>perthread</forkMode>
+							<threadCount>2</threadCount>
+							<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+							<includes>
+								<exclude>**/*SanityRunnerTest.java</exclude>
+							</includes>
+							<testFailureIgnore>true</testFailureIgnore>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>				
+	</profiles>
+</project>

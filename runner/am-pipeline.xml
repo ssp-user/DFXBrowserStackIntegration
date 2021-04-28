@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DFX - Appointment Manager - Regression Test Suite" allow-return-values="true">
+	<test name="DFX - Appointment Manager - Test Suite"	allow-return-values="true">
+		<packages>
+			<package name="cucumberTest" />
+		</packages>
+		<classes>
+			<class name="com.appointmentmanger.testrunner.AM01runnerTest" />
+			<class name="com.appointmentmanger.testrunner.AM02runnerTest" />
+ 			<class name="com.appointmentmanger.testrunner.AM03runnerTest" />
+<!-- 			<class name="com.appointmentmanger.testrunner.AM04runnerTest" /> -->
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

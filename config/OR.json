@@ -1,0 +1,144 @@
+{
+  "DFX_PAYMENTS":
+  {
+	"HOME_PAGE":
+	{
+		"lst_language":"xpath;(//input[@role='combobox'])[1]",	
+        "lnk_createinvoice":"xpath;//div[text()='Create invoice' or text()='Créer une facture']",
+        "lnk_clearFilter":"xpath;//button[@class='btn btn-link' and text() = 'CLEAR FILTER']",		
+		"footer_notification":"xpath;//div[@role='alertdialog']",
+		"footer_notification_close":"xpath;(//button[@aria-label='Close'])[3]",
+        "txt_dateRange":"name;daterangeInput",			
+		"lst_advisor":"xpath;(//input[@role='combobox'])[2]",			
+		"lst_status":"xpath;(//input[@role='combobox'])[3]",					
+		"txt_search":"xpath;//input[@class='form-control form-control-sm']", 
+		"tbl_row":"xpath;//div[@class='dataTables_scrollBody']/table",		
+		"tbl_ro":"xpath;//td/span",		
+		"tbl_serviceAdvisor":"xpath;(//tbody/tr/td)[4]",	
+		"tbl_serviceDate":"xpath;(//tbody/tr/td)[9]",		
+		"tbl_amount":"xpath;//td[@class=' text-right']",			
+		"tbl_status":"xpath;//td[@class = ' status-cell']/div/a"		
+	},
+	"GUEST_PAYMENT":
+	{
+        "lbl_ro":"xpath;(//span)[1]",
+		"btn_proceedToPayment":"xpath;//button[@class='btn btn-primary btn-lg button']/text",
+        "txt_cardNumber":"id;cardNumber",		
+        "txt_cardExpiry":"id;cardExpiry",			
+        "txt_cardCVC":"id;cardCvc",					
+        "txt_nameOnCard":"id;billingName",		
+        "select_country":"xpath;//select[@id='billingCountry']",			
+        "txt_postalCode":"id;billingPostalCode",			
+        "btn_pay":"xpath;//div[@class='SubmitButton-IconContainer']",		
+        "lbl_paymentStatusMessage":"xpath;//*[@class='card-title']"		
+	},
+	"RECEIPT_PAGE":
+	{
+        "lbl_amount":"xpath;//td[contains(text(),'Amount paid')]//parent::tr/following-sibling::tr/td",
+		"lbl_receiptHeading":"xpath;(//td[@class='Content Title-copy Font Font--title'])[1]",		
+		"lbl_amountCharged":"xpath;(//*[contains(text(),'Amount charged')]//parent::td/following-sibling::td)[2]"
+	},	
+	"CREATE_INVOICE":
+	{
+        "txt_customsearch":"xpath;//input[@class='form-control search tt-input' and @type='search']",	
+		"element_customer":"xpath;(//dfx-icon[@icon = 'call'])[1]",		
+        "btn_search":"xpath;//dfx-button[@class='hydrated']/button[text()='Search']/ancestor::div[@class='input-group-append']",	
+        "lnk_manualadd":"xpath;(//a[text()='here'])[1]",		
+        "txt_customer":"id;invoiceFormCustomerName",
+        "txt_vehicle":"xpath;//label[text()='Vehicle']/following-sibling::input",		
+        "slct_advisor":"xpath;//select[@class='custom-select']", 
+		"slct_advisor_options":"xpath;//select[@class='custom-select']/option",
+        "txt_vin":"xpath;//input[@type='text' and (@placeholder='VIN' or @placeholder='NIV')]",				
+        "btn_decode":"id;button-addon2",						
+        "txt_ronumber":"xpath;//input[@type='text' and (@placeholder='RO Number' or @placeholder='Numéro de BR')]",	
+		"txt_invoiceamount":"xpath;//input[@type='number' and (@placeholder='Invoice Amount') or (@placeholder='Montant de la facture')]",	
+        "txt_phonenumber":"xpath;//input[@type='tel' and (@placeholder='Phone Number' or @placeholder='Numéro de téléphone')]",			
+        "txt_email":"name;email",					
+        "chk_email":"xpath;//input[@type='checkbox' and @value='option1']",				
+        "chk_txt":"xpath;//input[@type='checkbox' and @value='option2']",
+        "lnk_backtosearch":"xpath;//a[text()='Back to search']",
+        "btn_void":"xpath;//button[text()='Void']",		
+        "btn_voidInvoice":"xpath;//button[text()='Yes, void the request']",			
+        "btn_proceedDirectPayment":"xpath;//button[text()='Proceed to direct payment' or text()='Passer au paiement direct']",
+        "btn_sendPaymentRequest":"xpath;//button[text()='Send payment request' or text()='Envoyer une demande de paiement']",
+        "btn_viewReceipt":"xpath;//button[text()='View Receipt']"		
+	}	
+  },
+  "DFX_ThirdParty":
+  {
+	"VIN_GEN":
+	{
+        "VIN_txt_code":"name;vin",
+		"Random_VIN_txt_code":"xpath;//span[@id='Result']",		
+        "lst_brand":"name;brand_id",
+        "VIN_description":"xpath;//div[@class='description']/p",			
+        "btn_generate":"xpath;//button[@type='submit' and text()='Generate']"				
+	},
+	"NHTSA_PAGE":
+	{
+        "VIN_txt_code":"id;VIN",
+        "VIN_decode_response":"xpath;(//div[@class='panel-heading'])[2]",		
+        "btn_decode":"xpath;//input[@id='btnSubmit' and @value = 'Decode VIN']"				
+	}	
+  },  
+  "DFX_MCI":
+  {
+	"login_img_language_fr":"xpath;//button[@id='button-basic' and text()=contains(text(),'Français')]",
+    "login_btn_continue_fr":"xpath;//button[text() = 'Continuer']",	
+    "login_txt_confirmationcode":"name;confirmationCode",
+    "login_btn_continue":"xpath;//button[text()='Continue' or text() = 'Continuer']",
+	"login_spinner":"xpath;//app-check-in",
+	"login_Unabletocheckintext":"xpath;//*[@class='text-muted mb-3 error-message ng-star-inserted']",
+	"login_VinlessCustomertext":"xpath;//*[@class='font-size-large mb-4 ng-star-inserted']/p[1]",	
+    "home_btn_next":"xpath;//button[text()='Next' or text() = 'Suivant']",
+    "home_btn_shoppingCart":"xpath;//div[@class='shopping-cart-icon-container ng-tns-c48-0']/img",	
+    "home_btn_cartAddMoreServices":"xpath;(//button[text()='Add more services'])[2]",		
+    "home_lbl_total":"xpath;//*[@class='text-right font-size-medium text-muted']",	
+    "home_chk_recommended":"xpath;(//*[@class='checkbox align-top checkbox-padding checkbox-width'])[1]",	
+    "home_lbl_factoryRequired":"xpath;(//div[text()='Factory Required' or text()='Factory required']/following-sibling::table/tbody/tr/td[@class='align-top'])[1]",	
+	"home_btn_confirmCheckIn":"xpath;//button[text()='Confirm check-in' or text() = 'Confirmer l’enregistrement']",	
+	"home_btn_AddMoreServices":"xpath;//button[text()='Add more services']",		
+	"home_txt_signature":"xpath;//app-signature-component",
+	"home_btn_completeCheckIn":"xpath;//button[text()='Complete check-in' or text() = 'Terminer l’enregistrement']",	
+	"thank_lnk_maintenance":"xpath;//a[text()='View my maintenance menu' or text() = 'Voir mon menu d’entretien']",	
+	"thank_lnk_preservice":"xpath;//a[text()='View my pre-service write-up']",	
+	"thank_spinner":"xpath;//app-check-in-complete"	
+  },  
+  "DFX_COMMUNICATION_DASHBOARD":
+  {
+	"btn_internalChat":"xpath;//span[text()='Internal']",	
+	"btn_customer":"xpath;//span[text()='Customer']",
+	"btn_ro":"xpath;//span[text()='RO']",
+    "btn_edit":"xpath;//span[@class='edit']",
+    "lst_internalMessage":"xpath;//a[@class='dropdown-item' and text()='Send Internal Message']",	
+	"lst_messageCustomer":"xpath;//a[@class='dropdown-item' and text()='Message Customer']",
+	"btn_arrowforward":"xpath;//i[@class='material-icons' and text()='arrow_forward']",
+	"txt_searchCustomer":"xpath;//div[@class='search-bar col-auto mt-4']/input[@id='userValue']",	
+    "lbl_firstCellCustomer":"xpath;(//label[text()='Cell Phone'])[1]",		
+	"txt_customerUserName":"xpath;//input[@id='userValue' and @placeholder='Enter customer name or phone number here to search']",	
+	"txt_internalUserName":"xpath;//input[@id='userValue' and @class = 'ml-1 pl-2']",		
+    "lbl_internalUser":"xpath;//label[@class='ml-5 pt-2 user-name']",
+    "lbl_newMessage":"xpath;//div[@slot='title']",	
+	"txt_input":"xpath;//dfx-message-input/div/div/input[@type='text']",
+	"txt_roScrollContainer":"xpath;(//div[@class='scroll-container'])[4]",	
+	"txt_internalScrollContainer":"xpath;(//div[@class='scroll-container'])[5]",	
+	"txt_search":"xpath;(//input[@type='search'])[1]",	
+	"radio_OtherMessages":"xpath;//div[@class='conversation-search-container']/div/ul/li/label[@for='unsubscribed']",		
+	"txt_customerScrollContainer":"xpath;(//div[@class='scroll-container'])[3]",		
+	"txtArea_internalScrollContainer":"xpath;(//label[@class='ml-5 pt-2 user-name'])",		
+	"btn_close":"xpath;//div[@class='message-wrapper']/div/div/a/dfx-icon[@icon='close']"	
+  },  
+  "DFX_DMPI":
+  {
+	"btn_enter":"xpath;//button[@type='submit' and @class='button cta']",	
+	"txt_lastName":"xpath;//input[@id='login']",	
+	"btn_viewItems":"xpath;//button[@class='button cta' and contains(text(),'View Items')]",	
+	"btn_confirm":"xpath;//button[@class='confirm' and contains(text(),'Confirm')]",
+	"btn_approve":"xpath;//button[@class='button cta green' and contains(text(),'Approve')]",
+    "chk_acknowledge":"xpath;//img[@alt = 'check' and @class = 'check']",	
+	"txt_signature":"xpath;//div[@class='wrapper']/canvas",	
+	"btn_clickToSign":"xpath;//button[@class='sign' and contains(text(),'Click to sign')]",	
+    "lbl_servicesApproved":"xpath;//p[@class='text uppercase' and contains(text() , 'Services Approved')]",
+	"lbl_vehicleReady":"xpath;//p[@class='description' and contains(text() , 'Your vehicle will be ready by')]"
+  }   
+}

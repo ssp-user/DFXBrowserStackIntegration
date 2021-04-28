@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DFX - Payments - Regression Test Suite" allow-return-values="true">
+	<parameter name="config" value="automationCloud.json" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="runBrowserStack" value="true" />
+	<test name="DFX - Payments - Test Suite" allow-return-values="true">
+		<packages>
+			<package name="cucumberTest" />
+		</packages>
+		<classes>
+			<class name="com.autotest.testruner.payments.PaymentsTestRunner" />			
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

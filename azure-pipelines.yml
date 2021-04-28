@@ -1,0 +1,79 @@
+trigger: none
+resources:
+  pipelines:
+    - pipeline: mySourcePipeline
+      source: 'PipeLine-Parallel'
+      trigger:
+       branches:
+       - master
+parameters:
+- name: image
+  displayName: Operating System
+  type: string
+  default: windows-2019
+  values:
+  - windows-2019
+- name: testenvironment
+  displayName: Test Environment
+  type: string
+  default: TEST2
+  values:
+  - TEST2
+  - STAGE2
+  - PROD2
+- name: browser
+  displayName: Browser Type
+  type: string
+  default: GUI
+  values:
+  - GUI
+  - HEADLESS
+pool: 
+    vmImage: 'windows-2019'
+
+steps:
+- script: echo ${{ parameters.image }}
+- script: echo ${{ parameters.testenvironment }}
+- script: echo ${{ parameters.browser }}
+
+- script: |
+   if not exist "C:\Program Files (x86)\Google" mkdir "C:\Program Files (x86)\Google"
+   if not exist "C:\Program Files (x86)\Google\Chrome" mkdir "C:\Program Files (x86)\Google\Chrome"
+   mklink /D "C:\Program Files (x86)\Google\Chrome\Application" "C:\Program Files\Google\Chrome\Application"
+  displayName: 'Command Line Script'    
+- powershell: 
+   gci src/test/resources/com/features/amfeatures/*.feature -recurse | ForEach {
+     (Get-Content $_ | ForEach {$_ -replace "TEST2", "${{ parameters.testenvironment }}"}) | Set-Content $_ 
+   }
+   
+   switch("${{ parameters.browser }}"){
+     "Headless"{
+        gci src/test/resources/com/features/amfeatures/*.feature -recurse | ForEach {
+      (Get-Content $_ | ForEach {$_ -replace "GUI", "headless"}) | Set-Content $_ 
+      }
+     }
+     "GUI"{
+        gci src/test/resources/com/features/amfeatures/*.feature -recurse | ForEach {
+      (Get-Content $_ | ForEach {$_ -replace "headless", "GUI"}) | Set-Content $_ 
+      }
+     }
+   }
+  displayName: 'PowerShell Script'
+- task: Maven@3
+  displayName: MavenJob
+  inputs:
+    goals: 'clean install -Pam-pipeline'
+    testRunTitle: 'Execution Results'
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '**/*.*'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()

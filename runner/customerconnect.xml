@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DFX - Customer connect - Regression Test Suite" allow-return-values="true">
+	<test name="DFX - Customer connect - Test Suite" allow-return-values="true">
+		<packages>
+			<package name="cucumberTest" />
+		</packages>
+		<classes>
+			<class name="com.autotest.testruner.customerconnect.CustomerConnectTestRunner" />			
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

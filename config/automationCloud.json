@@ -1,0 +1,57 @@
+{
+  "BROWSER_STACK":
+  {
+	"CONNECTION_DETAILS":
+	{
+        "server":"@hub-cloud.browserstack.com",
+		"username":"vishaljoshi_LHndK2",
+		"automate_key":"8qpj941mnYgE9yxq4GJf"
+	},
+	"COMMON_CAPABILITIES":
+	{
+		"build": "cucumber-browserstack",
+		"name": "dfx_ParallelTest",
+		"browserstack.debug": true,
+		"resolution": "1920x1080"		
+	},
+	"ENVIRONMENT_CAPABILITIES": 
+	{
+		"OPERATING_SYSTEM":
+		{
+			"WINDOWS": 
+			{
+				"os": "Windows",
+				"osVersion":"10"
+			},
+			"WINDOWS-XP": 
+			{
+				"os": "Windows",
+				"osVersion":"XP"
+			},
+			"OS-X": 
+			{
+				"os": "OS X",
+				"osVersion":"Catalina"
+			}			
+		},
+		"BROWSER_SPECIFICATION":
+		{
+			"CHROME": 
+			{
+				"browserName": "Chrome",
+				"browserVersion":"86.0"
+			},
+			"FIREFOX": 
+			{
+				"browserName": "Firefox",
+				"browserVersion":"82.0"
+			},
+			"SAFARI": 
+			{
+				"browserName": "Safari",
+				"browserVersion":"13.1"
+			}			
+		}
+	}	
+  }
+}
